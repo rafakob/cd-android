@@ -19,7 +19,6 @@ plugins {
     id 'net.nemerosa.versioning' version '2.8.2'
 }
 
-
 allprojects {
     repositories {
         google()
