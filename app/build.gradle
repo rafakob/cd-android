@@ -33,10 +33,7 @@ dependencies {
 }
 
 hello {
-
-
-
     message = repo.versionName
-    recipient = ""
+    recipient = repo.versionCode
 }
 

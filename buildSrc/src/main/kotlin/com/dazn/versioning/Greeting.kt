@@ -9,6 +9,6 @@ open class Greeting : DefaultTask() {
 
     @TaskAction
     internal fun sayGreeting() {
-        System.out.printf("%s %s\n", message, recipient)
+        System.out.printf("%s\n%s\n", message, recipient)
     }
 }

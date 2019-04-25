@@ -15,10 +15,7 @@ open class VersioningPlugin : Plugin<Project> {
 
         val git = Grgit.open()
 
-
-
-
-        project.extensions.create("repo", VersioningExtension::class.java, getVersionName(git), 132154)
+        project.extensions.create("repo", VersioningExtension::class.java, getVersionName(git), getVersionCode(git))
     }
 
     private fun getVersionName(git: Grgit): String {
@@ -30,6 +27,17 @@ open class VersioningPlugin : Plugin<Project> {
 
         return currentBranch.split("/").last()
     }
+
+    private fun getVersionCode(git: Grgit): Int {
+        val currentBranch = git.branch.current().name
+
+//        if (currentBranch.startsWith("release/").not()) {
+//            return "${git.describe { it.commit = "master" }}-${currentBranch.normalize()}"
+//        }
+
+        return git.log().size
+    }
+
 
     private fun String.normalize() =
         replace("[^a-zA-Z0-9]".toRegex(), "-")
