@@ -1,14 +1,9 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'GreetingPlugin'
+apply plugin: 'versioning'
 
 android {
-    repo.serverUrl = "ooowqoie"
-
-
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.rafakob.cdandroid"
@@ -41,7 +36,7 @@ hello {
 
 
 
-    message = repo.serverUrl
-    recipient = "Gradle"
+    message = repo.versionName
+    recipient = ""
 }
 

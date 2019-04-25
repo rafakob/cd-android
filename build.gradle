@@ -19,7 +19,7 @@ plugins {
     id 'net.nemerosa.versioning' version '2.8.2'
 }
 
-//apply plugin: 'GreetingPlugin'
+//apply plugin: 'VersioningPlugin'
 
 allprojects {
     repositories {

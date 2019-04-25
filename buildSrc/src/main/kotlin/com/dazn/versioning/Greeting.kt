@@ -1,4 +1,4 @@
-package org.example.greeting
+package com.dazn.versioning
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
@@ -9,6 +9,6 @@ open class Greeting : DefaultTask() {
 
     @TaskAction
     internal fun sayGreeting() {
-        System.out.printf("%s, %s!\n", message, recipient)
+        System.out.printf("%s %s\n", message, recipient)
     }
 }

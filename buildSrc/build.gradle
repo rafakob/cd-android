@@ -13,13 +13,14 @@ repositories {
 gradlePlugin {
     plugins {
         versioningPlugin {
-            id = 'GreetingPlugin'
-            implementationClass = 'org.example.greeting.GreetingPlugin'
+            id = 'versioning'
+            implementationClass = 'com.dazn.versioning.VersioningPlugin'
         }
     }
 }
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7"
+    implementation "org.ajoberstar.grgit:grgit-core:3.1.1"
 }
 compileKotlin {
     kotlinOptions {
