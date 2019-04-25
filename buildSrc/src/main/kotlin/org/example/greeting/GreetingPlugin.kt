@@ -9,5 +9,7 @@ open class GreetingPlugin : Plugin<Project> {
             task.message = "Hello"
             task.recipient = "World"
         }
+
+        project.extensions.create("repo", GreetingExtension::class.java, "test")
     }
 }

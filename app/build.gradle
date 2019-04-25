@@ -3,8 +3,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'GreetingPlugin'
 
 android {
+    repo.serverUrl = "ooowqoie"
+
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.rafakob.cdandroid"
@@ -32,3 +36,12 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }
+
+hello {
+
+
+
+    message = repo.serverUrl
+    recipient = "Gradle"
+}
+
