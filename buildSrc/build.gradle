@@ -1,0 +1,34 @@
+plugins {
+    id "java-gradle-plugin"
+    id 'org.jetbrains.kotlin.jvm' version '1.3.31'
+//    id "kotlin"
+    // Apply other plugins here, e.g. the kotlin plugin for a plugin written in Kotlin
+    // or the groovy plugin if the plugin uses Groovy
+}
+
+repositories {
+    jcenter()
+}
+
+gradlePlugin {
+    plugins {
+        versioningPlugin {
+            id = 'versioning'
+            implementationClass = 'com.dazn.versioning.VersioningPlugin'
+        }
+    }
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7"
+    implementation "org.ajoberstar.grgit:grgit-core:3.1.1"
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
