@@ -29,13 +29,14 @@ open class VersioningPlugin : Plugin<Project> {
     }
 
     private fun getVersionCode(git: Grgit): Int {
+        val baseCode = 1000000
         val currentBranch = git.branch.current().name
 
-//        if (currentBranch.startsWith("release/").not()) {
-//            return "${git.describe { it.commit = "master" }}-${currentBranch.normalize()}"
-//        }
+        if (currentBranch.startsWith("release/").not()) {
+            return baseCode + git.log { it.includes = listOf(currentBranch) }.size
+        }
 
-        return git.log().size
+        return baseCode + git.log { it.includes = listOf(currentBranch, "develop") }.size
     }
 
 
