@@ -17,7 +17,10 @@ buildscript {
 
 plugins {
     id 'net.nemerosa.versioning' version '2.8.2'
+    id 'GreetingPlugin'
 }
+
+//apply plugin: 'GreetingPlugin'
 
 allprojects {
     repositories {
@@ -29,4 +32,9 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+hello {
+    message = "Hi"
+    recipient = "Gradle"
 }
